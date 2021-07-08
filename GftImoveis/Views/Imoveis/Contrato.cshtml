@@ -1,0 +1,56 @@
+@model GftImoveis.Models.Imovel
+
+@{
+    Layout = "_NovoLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/proposta.css">
+</head>
+
+<body>
+
+<div class="novaimagem" style="width: 40rem;">
+<img class="card-img-top"  src="@("~/imagem/" + Model.Imagem)"  asp-append-version="true"  >
+</div>
+
+<h1>Proposta</h1>
+
+@{
+    if(Model.NegocioIm.Nome == "Aluguel")
+    {
+
+        <p id = "bem">Bem Vindo a Imobiliaria <strong>New Home!</strong> Seu novo lar está aqui!</p>
+        <p id="primeiro">
+            O Imóvel (@Model.CategoriaIm.Nome) situado no Estado de @Model.EnderecoIm.Nome / @Model.MunicipioIm.Nome / @Model.BairroIm.Nome,
+            que você selecionou está com um valor incrivel 
+            para @Model.NegocioIm.Nome,
+            está saindo no valor de R$ @Model.Preco.ToString("N2") por mês.
+        </p>
+        <p id="lugar">Um lugar aconchegante para você e sua familia, perto dos melhores pontos como supermercados, restaurantes e shoppings.</p>
+        <p id="contato">Entre em contato com um de nossos representantes para mais informações <strong>(15) 5555-78469</strong> e agende já a sua visita.</p>
+    }
+    else if(Model.NegocioIm.Nome == "Compra")
+    {
+        <p id = "bem">Bem Vindo a Imobiliaria <strong>New Home!</strong> Seu novo lar está aqui!</p>
+         <p id=primeiro>
+            O Imóvel (@Model.CategoriaIm.Nome) situado no Estado de @Model.EnderecoIm.Nome / @Model.MunicipioIm.Nome / @Model.BairroIm.Nome,
+            que você selecionou está com um valor incrivel 
+            para @Model.NegocioIm.Nome,
+            está saindo no valor de R$ @Model.Preco.ToString("N2")
+        </p>
+        <p id="cartao">Aceitamos financiamentos com os bancos - Caixa Econômica, Bradesco e Itaú.</p>
+        <p id="lugar">Um lugar aconchegante para você e sua familia, perto dos melhores pontos como supermercados, restaurantes e shoppings.</p>
+        <p id="contato">Entre em contato com um de nossos representantes para mais informações <strong>(15) 5555-78469</strong> e agende já a sua visita.</p>
+    }
+    else
+    {   <p id = "bem">Bem Vindo a Imobiliaria <strong>New Home!</strong> Seu novo lar está aqui!</p>
+        <p> Imovel (@Model.CategoriaIm.Nome) está saindo no valor R$ @Model.Preco.ToString("N2") e aberto a negociação.</p>
+        <p>Por favor entre em contato com os nossos Representates para mais informações <strong>(15) 5555-78469</strong> e agende já a sua visita.</p>
+    }
+}
+</body>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+</div>

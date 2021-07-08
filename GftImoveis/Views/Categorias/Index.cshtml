@@ -1,0 +1,44 @@
+@model IEnumerable<GftImoveis.Models.Categoria>
+
+@{
+    Layout = "_NovoLayout";
+}
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+
+<h1>Categorias</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn btn-outline-primary">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.CategoriaId" class="btn btn-outline-primary">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn btn-outline-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

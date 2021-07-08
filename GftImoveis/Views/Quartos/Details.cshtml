@@ -1,0 +1,31 @@
+@model GftImoveis.Models.Quarto
+
+@{
+    Layout = "_NovoLayout";
+}
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+<h1>Detalhes</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+    </dl>
+</div>
+<div class="detalhes">
+    <a asp-action="Edit" asp-route-id="@Model.QuartoId" class="btn btn-outline-primary">Editar</a> 
+    <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+</div>

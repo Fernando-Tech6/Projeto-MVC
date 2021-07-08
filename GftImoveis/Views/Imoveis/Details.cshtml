@@ -1,0 +1,71 @@
+@model GftImoveis.Models.Imovel
+
+@{
+    Layout = "_NovoLayout";
+}
+
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+<h1>Detalhes</h1>
+
+<div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descrição)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descrição)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoriaIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoriaIm.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnderecoIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnderecoIm.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MunicipioIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MunicipioIm.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BairroIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BairroIm.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantosIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantosIm.Quantidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NegocioIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NegocioIm.Nome)
+        </dd>  
+        <dd>
+            <img src="@("~/imagem/" + Model.Imagem)" style="margin-left: 40px;" asp-append-version="true" width="150" height="150"/>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ImovelId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

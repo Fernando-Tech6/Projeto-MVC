@@ -1,0 +1,31 @@
+@model GftImoveis.Models.Quarto
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+<h1>Deletar</h1>
+
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" style="margin-left: 330px;">
+        <input type="hidden" asp-for="QuartoId" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" /> 
+        <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+@model GftImoveis.Models.Bairro
+
+@{
+    Layout = "_NovoLayout";
+}
+
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+
+<h1>Detalhes</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MunicipioB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MunicipioB.Nome)
+        </dd>
+    </dl>
+</div>
+<div class="detalhes">
+    <a asp-action="Edit" asp-route-id="@Model.BairroId" class="btn btn-outline-primary">Editar</a> 
+    <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+</div>

@@ -1,0 +1,71 @@
+@model GftImoveis.Models.Imovel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/modelo.css">
+</head>
+
+<h1>Deletar</h1>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descrição)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descrição)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoriaIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoriaIm.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnderecoIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnderecoIm.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MunicipioIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MunicipioIm.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BairroIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BairroIm.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantosIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantosIm.Quantidade)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NegocioIm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NegocioIm.Nome)
+        </dd class>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd class>
+        <dd>
+            <img src="@("~/imagem/" + Model.Imagem)" style="margin-left: 30px;" asp-append-version="true" width="200" height="200"/>
+        </dd>
+    </dl>
+    <form asp-action="Delete" style="margin-left: 360px;">
+        <input type="hidden" asp-for="ImovelId" />
+        <input type="submit" value="Deletar" class="btn btn-outline-danger" /> 
+        <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.novaimagem{
+     border: solid;
+     margin-top: 30px;
+     margin-left: 170px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+#bem{
+    text-align: center;
+
+}

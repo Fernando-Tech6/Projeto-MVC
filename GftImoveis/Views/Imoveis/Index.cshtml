@@ -1,0 +1,38 @@
+
+@model IEnumerable<GftImoveis.Models.Imovel>
+
+@{
+    Layout = "_NovoLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/imovel.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+</head>
+
+<h1>New Home</h1>
+
+
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 22rem;">
+        <img class="card-img-top"  src="@("~/imagem/" + item.Imagem)"  asp-append-version="true" >
+        <div class="card-body">
+                
+             <p>@item.Descrição!</p>   
+            <p class="card-text">@item.CategoriaIm.Nome com @item.QuantosIm.Quantidade Quartos</p>
+            <p>Situado no estado do @item.EnderecoIm.Nome - @item.MunicipioIm.Nome - @item.BairroIm.Nome</p>
+            <p>@item.NegocioIm.Nome</p>
+        </div>
+        <div class="botoes">
+        <a asp-action="Edit" asp-route-id="@item.ImovelId" class="btn btn-outline-primary">Editar</a>
+        <a asp-action="Contrato" asp-route-id="@item.ImovelId" class="btn btn-outline-primary">Proposta</a>
+        <a asp-action="Delete" asp-route-id="@item.ImovelId" class="btn btn-outline-danger">Delete</a>
+        </div>
+      </div>
+    }
+
+</div>
+
+

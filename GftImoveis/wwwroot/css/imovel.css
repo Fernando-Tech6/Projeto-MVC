@@ -1,0 +1,45 @@
+
+  h1{
+      text-align: center;
+      font-family: Lobster; 
+      font-size: 75px;
+  }
+  .card-columns .card-body {
+      height: 250px;
+      text-align: center;
+      padding-top: 40px;
+      font-style: italic;
+      font-size: 18px;
+  }
+  
+  .card-columns .card-img {
+    height: 300px;
+    opacity: .8;
+    
+  }
+  
+  
+  .card-columns .card:hover { 
+      transform: scale(1.05);  /*Para criar o efeito de ampliação*/
+      box-shadow: 0 30px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06); 
+
+  }
+
+  .card-columns{
+      margin-left: 50px;
+      padding-top: 50px;
+  }
+  
+   a{
+       margin-left: 10px;
+
+   }
+
+   .botoes{
+       margin-left: 45px;
+        height: 50px;
+   }
+
+   img{
+       height: 250px;
+   }
